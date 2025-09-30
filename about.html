@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #fffaf0, #fdf5e6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            height: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-image:linear-gradient(to bottom right , #fff,#dfebfb,#fff);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+
+        .text-content {
+            flex: 1 1 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .text-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: maroon;
+            font-size: 2.8vw;
+            text-align: center;
+            margin-bottom: 0.5vw;
+        }
+
+        .text-content h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8vw;
+            color: #8b0000;
+            text-align: center;
+            margin-bottom: 1vw;
+        }
+
+        .text-content p {
+            font-size: 1vw;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .text-content h1 {
+            font-family: 'Jokerman', cursive;
+            font-size: 1.6vw;
+            color: maroon;
+            text-align: center;
+            margin-top: 1.5vw;
+        }
+
+        .image-content {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-content img {
+            max-height: 80vh;
+            max-width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease; /* Global transition for the image */
+        }
+
+        .image-content img:hover {
+            transform: scale(0.9); /* Slight zoom effect on hover */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Increased shadow for effect */
+        }
+
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                overflow: auto;
+                height: auto;
+            }
+
+            .container {
+                flex-direction: column-reverse;
+                height: auto;
+            }
+
+            .text-content h2 {
+                font-size: 6vw;
+            }
+
+            .text-content h3 {
+                font-size: 5vw;
+            }
+
+            .text-content p {
+                font-size: 3.5vw;
+            }
+
+            .text-content h1 {
+                font-size: 5vw;
+            }
+
+            .image-content img {
+                max-height: 80vh; /* Adjust image size for mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-content">
+            <h2>ABOUT US</h2>
+            <h3>Odisha at a blink</h3>
+            <p>
+                "Travel is the only thing that you buy that makes you RICHER." We, at ‘Odisha at a blink’, promise by
+                this and
+                commit ourselves to fulfilling your travel ambitions, enriching you as a storyteller.<br><br>
+
+                We strive to be your dedicated virtual tour guide to the stunning architecture, rich history, dialects,
+                and
+                vibrant art, music, and dance forms of Odisha — a place where life is simple and serene.<br><br>
+
+                Odisha offers a peaceful retreat for those seeking mental calm. We assist in planning your tours with
+                thoughtful
+                consideration for your schedule, helping you live a life filled with extraordinary travel experiences.
+            </p>
+            <h1>BON VOYAGE</h1>
+        </div>
+        <div class="image-content">
+            <img src="about.jpg" alt="Odisha travel image" />
+        </div>
+    </div>
+</body>
+
+</html>

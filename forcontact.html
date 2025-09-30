@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url("bg.jpg") no-repeat center center/cover;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* Animated Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, rgba(128, 0, 0, 0.6), rgba(255, 215, 0, 0.4), rgba(255, 255, 255, 0.3));
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .main {
+      text-align: center;
+      padding: 50px 20px;
+      color: white;
+      background: linear-gradient(to right, rgba(128, 0, 0, 0.9), rgba(94, 13, 13, 0.9));
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+
+    .main h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    .main h1::after {
+      content: "";
+      position: absolute;
+      width: 60%;
+      height: 4px;
+      background: gold;
+      left: 20%;
+      bottom: -8px;
+      border-radius: 2px;
+      animation: underline 2s infinite alternate;
+    }
+
+    @keyframes underline {
+      from { width: 20%; }
+      to { width: 80%; }
+    }
+
+    .quote {
+      margin-top: 20px;
+      font-style: italic;
+      color: #ffd700;
+      font-size: 1.1rem;
+    }
+
+    .meet {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+
+    .meet h1 {
+      display: inline-block;
+      padding: 12px 35px;
+      background: maroon;
+      color: white;
+      border-radius: 40px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      padding: 15px 20px;
+      border-radius: 18px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .card img {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: rotate(6deg) scale(1.1);
+      filter: drop-shadow(0 0 8px gold);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: maroon;
+      font-weight: bold;
+    }
+
+    /* Social Links */
+    .social {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .social h2 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 12px gold;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .main h1 { font-size: 2.3rem; }
+      .quote { font-size: 1rem; }
+      .meet h1 { font-size: 1.5rem; padding: 10px 28px; }
+      .card { padding: 12px 18px; }
+      .card h3 { font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .main { padding: 35px 15px; }
+      .main h1 { font-size: 2rem; letter-spacing: 1px; }
+      .quote { font-size: 0.9rem; }
+      .meet h1 { font-size: 1.3rem; padding: 8px 20px; }
+      .card { flex-direction: column; text-align: center; gap: 10px; }
+      .card img { width: 45px; height: 45px; }
+      .card h3 { font-size: 0.95rem; }
+      .social-icons img { width: 35px; height: 35px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <h1>CONTACT US</h1>
+    <p class="quote">"The world is a book, and those who do not travel read only a page."<br> - Saint Augustine</p>
+  </div>
+
+  <div class="meet">
+    <h1>Meet Us</h1>
+  </div>
+
+  <div class="contact-container">
+    <div class="card">
+      <img src="call.png" alt="Call Icon">
+      <h3>+91 9834721006</h3>
+    </div>
+
+    <div class="card">
+      <img src="atrate.jpg" alt="Email Icon">
+      <h3>contact_traveldiaries@gmail.com</h3>
+    </div>
+
+    <div class="card">
+      <img src="loc.jpg" alt="Location Icon">
+      <h3>Kailash Garden, Street No.-10, H-1, Delhi</h3>
+    </div>
+  </div>
+
+  <!-- Social Links -->
+  <div class="social">
+    <h2>Follow Us</h2>
+    <div class="social-icons">
+      <a href="#"><img src="fb.png" alt="Facebook"></a>
+      <a href="#"><img src="insta.png" alt="Instagram"></a>
+      <a href="#"><img src="twitter.png" alt="Twitter"></a>
+    </div>
+  </div>
+</body>
+</html>

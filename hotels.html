@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odisha Hotels</title>
+    <style>
+      /* Global Styles */
+      body {
+        margin: 0;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        background-color: #fdf6f0;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        color: maroon;
+        font-family: Impact, "Arial Narrow Bold", sans-serif;
+        font-size: 60px;
+        margin: 30px 0 10px 0;
+      }
+
+      /* Hotels Grid */
+      .hotels-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 0 40px 50px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Hotel Card */
+      .hotel-card {
+        background-color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .hotel-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .hotel-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hotel-info {
+        padding: 15px 20px;
+      }
+
+      .hotel-info h4 {
+        color: darkslategray;
+        font-size: 24px;
+        margin: 10px 0;
+      }
+
+      .hotel-info p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        max-height: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .hotel-price-rating {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 20px 20px;
+      }
+
+      .price {
+        color: maroon;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .hotel-rating img {
+        height: 35px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 40px;
+        }
+
+        .hotel-card {
+          border-radius: 10px;
+        }
+
+        .hotel-card img {
+          height: 180px;
+        }
+
+        .hotel-info h4 {
+          font-size: 18px;
+        }
+
+        .hotel-info p {
+          font-size: 14px;
+          max-height: 100px;
+        }
+
+        .hotel-price-rating {
+          padding: 0 15px 15px 15px;
+        }
+
+        .price {
+          font-size: 16px;
+        }
+
+        .hotel-rating img {
+          height: 25px;
+        }
+
+        .hotels-container {
+          gap: 15px;
+          padding: 0 15px 30px 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 30px;
+        }
+
+        .hotels-container {
+          grid-template-columns: 1fr; /* ek row me 1 card */
+        }
+
+        .hotel-card img {
+          height: 150px;
+        }
+
+        .hotel-info h4 {
+          font-size: 16px;
+        }
+
+        .hotel-info p {
+          font-size: 13px;
+          max-height: 80px;
+        }
+
+        .price {
+          font-size: 14px;
+        }
+
+        .hotel-rating img {
+          height: 22px;
+        }
+      }
+
+      /* Maroon Background Marquee */
+      .marquee-container {
+        background-color: maroon;
+        padding: 20px 0;
+        margin-bottom: 50px;
+      }
+
+      .marquee-text {
+        color: white;
+        font-size: 36px;
+        font-family: "Georgia", "Times New Roman", serif;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Explore Odisha Hotels</h1>
+
+    <!-- Marquee Heading with Full Maroon Background -->
+    <div class="marquee-container">
+      <marquee behavior="scroll" direction="left" scrollamount="10">
+        <span class="marquee-text">Hotels To Stay</span>
+      </marquee>
+    </div>
+
+    <!-- Hotels Cards -->
+    <div class="hotels-container">
+      <!-- Hotel Card 1 -->
+      <div class="hotel-card">
+        <img src="st.jpg" alt="Sterling Puri" />
+        <div class="hotel-info">
+          <h4>Sterling Puri</h4>
+          <p>
+            Sterling Puri is in an estuary where the river meets the sea & is
+            set in a sprawling 15 acres. Catch the sunrise on the beach or
+            indulge in the spa, swimming pool, or games & activities...
+          </p>
+        </div>
+        <div class="hotel-price-rating">
+          <span class="price">₹6499</span>
+          <span class="hotel-rating"><img src="5s.jpg" alt="5 star" /></span>
+        </div>
+      </div>
+
+      <!-- Hotel Card 2 -->
+      <div class="hotel-card">
+        <img src="h1.jpg" alt="Swosti Grand" />
+        <div class="hotel-info">
+          <h4>Swosti Grand</h4>
+          <p>
+            Swosti Grand is a luxury business hotel situated in Bhubaneswar.
+            Featuring 56 well-appointed rooms with modern facilities and
+            amenities, 4 spacious banquet halls and boardrooms...
+          </p>
+        </div>
+        <div class="hotel-price-rating">
+          <span class="price">₹5200</span>
+          <span class="hotel-rating"><img src="5s.jpg" alt="5 star" /></span>
+        </div>
+      </div>
+
+      <!-- Hotel Card 3 -->
+      <div class="hotel-card">
+        <img src="hi2.jpg" alt="Mayfair Lagoon" />
+        <div class="hotel-info">
+          <h4>Mayfair Lagoon</h4>
+          <p>
+            Being one of the best luxury hotel in Bhubaneswar, Mayfair Lagoon
+            embodies the core values of Eastern hospitality. With its unique
+            designs, architectural style and accent on ecology...
+          </p>
+        </div>
+        <div class="hotel-price-rating">
+          <span class="price">₹8176</span>
+          <span class="hotel-rating"><img src="4s.webp" alt="4 star" /></span>
+        </div>
+      </div>
+
+      <!-- Hotel Card 4 -->
+      <div class="hotel-card">
+        <img src="pr.jpg" alt="Pride Ananya Resort" />
+        <div class="hotel-info">
+          <h4>Pride Ananya Resort</h4>
+          <p>
+            Situated centrally in Puri, Pride Ananya Resort is located near the
+            Puri Railway Station, Lord Jagannath Temple & Sea Beach...
+          </p>
+        </div>
+        <div class="hotel-price-rating">
+          <span class="price">₹3850</span>
+          <span class="hotel-rating"><img src="3s.png" alt="3 star" /></span>
+        </div>
+      </div>
+
+      <!-- Hotel Card 5 -->
+      <div class="hotel-card">
+        <img src="gb.jpg" alt="Ginger Bhubaneshwar" />
+        <div class="hotel-info">
+          <h4>Ginger Bhubaneshwar</h4>
+          <p>
+            Ginger Hotel Bhubaneshwar is one of the finest budget hotels in
+            Bhubaneshwar conveniently located near a plethora of attractions...
+          </p>
+        </div>
+        <div class="hotel-price-rating">
+          <span class="price">₹2975</span>
+          <span class="hotel-rating"><img src="4s.webp" alt="4 star" /></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

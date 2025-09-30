@@ -1,0 +1,244 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f9f9fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: maroon;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: maroon;
+}
+
+/* Hero (Maroon Theme) */
+.hero {
+  background: url("travel-bg.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(128,0,0,0.8), rgba(90,0,0,0.8));
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 2rem;
+  color: white;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+.hero-content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 3px 10px rgba(0,0,0,0.5);
+  color: #fff;
+}
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+.hero-btn {
+  background: #fff;
+  color: maroon;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+.hero-btn:hover {
+  background: maroon;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Preferences */
+.preferences {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+.form-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+}
+.form-card h2 {
+  margin-bottom: 1.5rem;
+  color: maroon;
+}
+.form-group {
+  margin-bottom: 1.2rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.option a {
+  margin-left: 0.5rem;
+  color: maroon;
+  font-size: 0.9rem;
+}
+.btn {
+  display: inline-block;
+  background: maroon;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #600000;
+}
+
+/* Itinerary */
+.itinerary {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.itinerary h2 {
+  margin-bottom: 2rem;
+  color: maroon;
+}
+.trip-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.trip-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.trip-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.trip-card h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Gallery */
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.gallery h2 {
+  margin-bottom: 2rem;
+  color: maroon;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer {
+  background: maroon;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Trip Card Images - Larger Size */
+.trip-card img {
+  width: 100%;
+  height: 300px;        /* Increased height */
+  object-fit: cover;    /* Crops without distortion */
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Gallery Images - Larger Size */
+.gallery-grid img {
+  width: 100%;
+  height: 250px;        /* Increased height for better visibility */
+  object-fit: cover;    /* Keeps aspect ratio neat */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); /* Slightly stronger shadow */
+  transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+

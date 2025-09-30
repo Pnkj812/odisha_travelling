@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Odisha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Font: Poetsen One -->
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('bg2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Style for individual links */
+        .lii {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            position: relative;
+            font-weight: 500;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover effect for links */
+        .lii::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #f0c040;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .lii:hover {
+            color: #f0c040;
+            transform: translateY(-5px);
+        }
+
+        .lii:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search input {
+            padding: 6px 10px;
+            border-radius: 20px;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .login-icon i {
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: white;
+        }
+
+        .hero {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 80px;
+            background: rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-family: 'Poetsen One', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
+            font-style: italic;
+            margin-bottom: 40px;
+        }
+
+        .explore-btn {
+            padding: 14px 28px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .explore-btn:hover::before {
+            left: 100%;
+        }
+
+        .explore-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #f0c040, #ff6347); /* Color change on hover */
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle i {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.6);
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="odisha_logo.png" alt="Odisha Logo">
+        </div>
+
+        <nav>
+            <ul id="navLinks">
+                <li><a href="#" class="lii">Home</a></li>
+                <li><a href="about.html" class="lii">About</a></li>
+                <li><a href="routes.html" target="_blank" class="lii">Trip</a></li>
+                <li><a href="hotels.html"  class="lii">Hotels</a></li>
+                <li><a href="forcontact.html" class="lii">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="right-section">
+            <div class="search">
+                <input type="text" placeholder="Search this website">
+            </div>
+            <a href="login.html" class="login-icon"><i class="fas fa-user-circle"></i></a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>WELCOME TO ODISHA</h1>
+        <h2>"Wherever you go, it becomes a part of you."</h2>
+        <a href="odishaproject.html">
+            <button class="explore-btn" >Explore</button>
+        </a>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
